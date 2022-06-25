@@ -1,0 +1,130 @@
+#4
+def binary_search(arr, low, high, x):
+
+	# Check base case
+	if high >= low:
+
+		mid = (high + low) // 2
+
+		# If element is present at the middle itself
+		if arr[mid] == x:
+			return mid
+
+		# If element is smaller than mid, then it can only
+		# be present in left subarray
+		elif arr[mid] > x:
+			return binary_search(arr, low, mid - 1, x)
+
+		# Else the element can only be present in right subarray
+		else:
+			return binary_search(arr, mid + 1, high, x)
+
+	else:
+		# Element is not present in the array
+		return -1
+
+arr = [ 2, 3, 4, 10, 40 ]
+x = 10
+
+# Function call
+result = binary_search(arr, 0, len(arr)-1, x)
+
+if result != -1:
+	print("Element is present at index", str(result))
+else:
+	print("Element is not present in array")
+
+
+Code for Exp 2
+
+mark=float(input("ENTER YOUR MARK:"))
+
+if  mark>=90:
+
+    print("Grade O")
+
+elif mark>=80 and mark<90:
+
+    print("Grade A+")
+
+elif mark>=70 and mark<80:
+
+    print("Grade A")
+
+elif mark>=60 and mark<70:
+
+    print("Grade B+")
+
+elif mark>=50 and mark<60:
+
+    print("Grade B")
+
+elif mark>=40 and mark<30:
+
+    print("Grade C")
+
+else:
+
+    print("Grade F")
+
+Code for Exp 3
+
+x=int(input("value of side 1:"))
+
+y=int(input("value of side 2:"))
+
+z=int(input("value of side 3:"))
+
+if (x>10 or y>=10 or z>=10):
+
+    print("TRAINGLE CANNOT FORM")
+
+elif (x==y==z):
+
+    print("Equaletral Traingle")
+
+elif (x==y!=z):
+
+    print("Isocelus Traingle")
+
+else:
+
+    print("Scalene Traingle")
+
+Exp 10 Code
+
+list = []
+
+def pop():
+
+    m=len(list)-1
+
+    print("Popped Element: ",list[m])
+
+    list.pop(m)
+
+    print("Current Stack: ",list)
+
+while True:
+
+               print("1.PUSH")
+
+               print("2.POP")
+
+               res = input("Enter the No of Operation : ")
+
+               if(res == "PUSH"):
+
+                              res = input("Enter the Elemet to add : ")
+
+                              list.append(res)
+
+                              print(list)
+
+               elif(res == "POP"):
+
+                   pop()
+
+               else:
+
+                   print("Wrong Choice")
